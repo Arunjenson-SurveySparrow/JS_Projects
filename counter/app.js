@@ -6,8 +6,8 @@ const btns = document.querySelectorAll('.btn');
 
 let answer = 0;
 
-btns.forEach(function(btn){
-    btn.addEventListener("click" ,function(e){
+btns.forEach((btn)=>{
+    btn.addEventListener("click" ,(e)=>{
         const state = e.currentTarget.classList;
         if(state.contains('decrease')){
             answer--;
