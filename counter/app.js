@@ -1,7 +1,4 @@
 let value = document.querySelector('#value');
-let increase = document.querySelector('.decrease');
-const decrease = document.querySelector('.increase');
-// let reset = document.querySelector('.reset');
 const btns = document.querySelectorAll('.btn');
 
 let answer = 0;
@@ -10,11 +7,9 @@ btns.forEach((btn)=>{
     btn.addEventListener("click" ,(e)=>{
         const state = e.currentTarget.classList;
         if(state.contains('decrease')){
-            answer--;
-            value.textContent = answer;  
+            answer--; 
         }
         else if(state.contains('increase')){
-            console.log("increase")
             answer++;  
         }
         else{
@@ -33,6 +28,3 @@ btns.forEach((btn)=>{
         value.textContent = answer;
     });
 });
-if(answer >0){
- 
-}
