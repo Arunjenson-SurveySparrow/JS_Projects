@@ -99,23 +99,24 @@ let container = document.querySelector('.btn-container');
 window.addEventListener('DOMContentLoaded',()=>{
   displayMenuItems(menu);
   displayMenuBtn();
-
 })
 
 const displayMenuBtn = ()=>{
 
+  // filtering the unique ones and storing it in the categories
   const categories = menu.reduce((values,item)=>{
     if(!values.includes(item.category)){
       values.push(item.category);
     }
     return values;
   },['all']);
+  
   const categoryBtns = categories.map((item)=>{
         
         return `<button class="filter-btn" type="button" data-id="${item}">${item}</button>`
   }).join(" ");
   container.innerHTML = categoryBtns;
-  const filterbtns = document.querySelectorAll('.filter-btn');
+  const filterbtns = container.querySelectorAll('.filter-btn');
 
   filterbtns.forEach((btn)=>{
     btn.addEventListener("click",(e)=>{
@@ -134,8 +135,6 @@ const displayMenuBtn = ()=>{
      
     });
   });
-
-
 }
 
 
